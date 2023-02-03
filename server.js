@@ -10,6 +10,9 @@ http.listen(PORT, () =>{
     console.log(`Listening on port ${PORT}`);
 })
 
+
+app.use(express.static(__dirname+'/public'))
+
 app.get('/', (re, res) =>{
-    res.send("Hello world.")
+    res.sendFile(__dirname + '/index.html')
 })
